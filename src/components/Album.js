@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-
+import Ionicon from 'react-ionicons';
 // added during components:album lesson, not required
 import './../App.css';
 ////// ^^^^^^ ///////
@@ -17,10 +17,12 @@ class Album extends Component {
             album: album,
             currentSong: album.songs[0],
             isPlaying: false,
+            isHovered: false,
         };
 
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
+        // this.handleHover = this.handleHover.bind(this);
     }
   
     play() {
@@ -48,7 +50,10 @@ class Album extends Component {
         }
     }
 
+
+
     render() {
+        
         return (
             <section className="album">
                 <section id="album-info">
@@ -68,14 +73,29 @@ class Album extends Component {
                     <tbody>
                         {
                         this.state.album.songs.map( (song, index) =>
-                            <tr className="song" key={index} onClick={()=> this.handleSongClick(song)} > 
-                                <td>{index +1})</td> 
+                            <tr 
+                                className={"song"} 
+                                key={index} 
+                                onClick={()=> this.handleSongClick(song)} 
+                                onMouseEnter={() => this.setState({ isHovered: index + 1 })} 
+                                onMouseLeave={() => this.setState({ isHovered: false })}>
+                                
+                                { (this.state.currentSong.title === song.title) ?
+                                    <td>{this.state.isPlaying ? <Ionicon icon="ios-pause"/> : <Ionicon icon="ios-play"/>}</td>
+                                    : 
+                                    (this.state.isHovered === index +1 ) ?
+                                    <td><Ionicon icon="ios-play"/></td>
+                                    : 
+                                    <td className="song-number">{index +1})</td>
+                                } 
                                 <td>{song.title}</td> 
                                 <td>{song.duration}</td> 
-                            </tr>
+                            </tr> 
                         )
                         }
-                    </tbody>
+
+                        
+                      </tbody>
                 </table>
 
             </section>
