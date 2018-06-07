@@ -15,7 +15,7 @@ class Album extends Component {
         
         this.state = {
             album: album,
-            currentSong: album.songs[0],
+            currentSong: '',
             isPlaying: false,
             isHovered: false,
         };
@@ -79,15 +79,15 @@ class Album extends Component {
                                 onClick={()=> this.handleSongClick(song)} 
                                 onMouseEnter={() => this.setState({ isHovered: index + 1 })} 
                                 onMouseLeave={() => this.setState({ isHovered: false })}>
-                                
+
                                 { (this.state.currentSong.title === song.title) ?
-                                    <td>{this.state.isPlaying ? <Ionicon icon="ios-pause"/> : <Ionicon icon="ios-play"/>}</td>
-                                    : 
-                                    (this.state.isHovered === index +1 ) ?
-                                    <td><Ionicon icon="ios-play"/></td>
-                                    : 
-                                    <td className="song-number">{index +1})</td>
-                                } 
+                                <td>{this.state.isPlaying ? <Ionicon icon="ios-pause"/> : <Ionicon icon="ios-play"/>}</td>
+                                :
+                                (this.state.isHovered === index + 1) ?
+                                <td><Ionicon icon="ios-play"/></td> 
+                                :
+                                <td className="song-number">{index+1})</td>
+                                }
                                 <td>{song.title}</td> 
                                 <td>{song.duration}</td> 
                             </tr> 
