@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import Ionicon from 'react-ionicons';
 // added during components:album lesson, not required
 import './../App.css';
 ////// ^^^^^^ ///////
+import PlayerBar from './PlayerBar';
 
 class Album extends Component {
     constructor(props) {
@@ -15,14 +15,13 @@ class Album extends Component {
         
         this.state = {
             album: album,
-            currentSong: '',
+            currentSong: "",
             isPlaying: false,
             isHovered: false,
         };
 
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
-        // this.handleHover = this.handleHover.bind(this);
     }
   
     play() {
@@ -50,6 +49,13 @@ class Album extends Component {
         }
     }
 
+    handlePrevClick() {
+        const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+        const newIndex = Math.max(0, currentIndex - 1);
+        const newSong = this.state.album.songs[newIndex];
+        this.setSong(newSong);
+        this.play();
+    }
 
 
     render() {
@@ -81,10 +87,10 @@ class Album extends Component {
                                 onMouseLeave={() => this.setState({ isHovered: false })}>
 
                                 { (this.state.currentSong.title === song.title) ?
-                                <td>{this.state.isPlaying ? <Ionicon icon="ios-pause"/> : <Ionicon icon="ios-play"/>}</td>
+                                this.state.isPlaying ? <td className="icon ion-ios-pause"></td> : <td className="icon ion-ios-play"></td>
                                 :
                                 (this.state.isHovered === index + 1) ?
-                                <td><Ionicon icon="ios-play"/></td> 
+                                <td className="icon ion-ios-play"></td> 
                                 :
                                 <td className="song-number">{index+1})</td>
                                 }
@@ -97,6 +103,12 @@ class Album extends Component {
                         
                       </tbody>
                 </table>
+                <PlayerBar 
+                    isPlaying={this.state.isPlaying} 
+                    currentSong={this.state.currentSong} 
+                    handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+                    handlePrevClick={() => this.handlePrevClick()}
+                    />
 
             </section>
         );
