@@ -1,0 +1,25 @@
+.BS {
+    display: flex;
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lib-header {
+    font-family: 'Jua';
+    color: white;
+}
+
+.album-links > a{
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.album-links:hover {
+    text-decoration: underline;
+}
+.lib-album-title {
+    font-size: 25px;
+    font-weight: bold;
+}

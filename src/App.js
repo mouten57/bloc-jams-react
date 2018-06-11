@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse>
         <Navbar.Header>
           <Navbar.Brand>
           <Link to ='/' className="App-logo">
@@ -29,15 +29,32 @@ class App extends Component {
         </Navbar.Header>
         
          <Navbar.Collapse>
+        
          <Nav pullRight>
           <NavItem eventKey={1} href="#"> 
             <div className="icon ion-ios-home" id="nav-pic"></div> 
-            <Link to ='/' id="nav-link">Landing</Link>
+            <Link to ='/' id="nav-link">Home</Link>
           </NavItem>
-          <NavItem eventKey={2} href="#">
-            <div className="icon ion-ios-musical-notes" id="nav-pic"></div>
-            <Link to='/library' id="nav-link">Library</Link>
-          </NavItem>
+
+          <NavDropdown eventKey={2} title="Library" id="nav-link" className="icon ion-ios-musical-note">
+            <MenuItem eventKey={2.1}>
+              <div className="icon ion-ios-download" id="nav-pic"></div>
+              <Link to='/library' id="drop-link">Albums</Link></MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey={2.2}>
+              
+              <div className="icon ion-ios-arrow-round-forward" id="drop-pic"></div>
+              <Link to ='/album/the-colors' id="drop-link">The Colors</Link></MenuItem>
+              
+              
+            <MenuItem divider />
+            <MenuItem eventKey={2.3}>
+              
+              <div className="icon ion-ios-arrow-round-forward" id="drop-pic"></div>
+              <Link to ='/album/the-telephone' id="drop-link">The Telephone</Link></MenuItem>
+              
+              
+          </NavDropdown>
         </Nav>
         </Navbar.Collapse>
       </Navbar>

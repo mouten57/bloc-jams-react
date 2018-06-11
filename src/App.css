@@ -3,16 +3,26 @@
 }
 
 .App-logo {
-  color: white;
   font-family: 'Indie Flower', cursive;
   font-size: 15px;
+  float: left;
 }
 
 #nav-link{
   font-size: 15px;
-  margin: 2px;
-  color: white;
+  color: black;
+  background: white;
   font-family: "Montserrat";
+  text-align: center;
+}
+
+
+#drop-link, #drop-pic {
+  color: black;
+  font-family: 'Montserrat';
+  display: inline-block;
+  
+  margin: 5px;
 }
 
 
@@ -25,14 +35,12 @@
 
 #nav-pic {
   font-size: 20px;
-  color: white;
+  color: black;
   margin-right: 10px;
 }
 
 #logo-pic {
   height: 30px;
-  display:inline-block;
-  margin-left: 15px;
 }
 
 a:hover {
@@ -54,8 +62,8 @@ h1 {
 }
 
 
-.navbar {
-  background-color: black;
+.navbar-header {
+  background-color: white;
   height: 50px;
 }
 
@@ -66,7 +74,8 @@ h1 {
 }
 
 .navbar {
-  border-bottom: 2px solid white;
+  border: none;
+
 }
 
 .navbar a:hover {
@@ -74,15 +83,15 @@ h1 {
 }
 
 .navbar-collapse {
-  position: relative;
   z-index: 1000;
-  background: black;
-  float: right;
+  background: white;
+  position: sticky;
 }
 
-li.navbar-right {
-  color: black;
+.dropdown-toggle {
+  background: white;
 }
+
 
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
   margin-right: 0px; 
@@ -92,4 +101,12 @@ li.navbar-right {
 .navbar-nav>li>a {
   padding-top: 10px;
   padding-bottom: 0;
+}
+
+.navbar-nav .open .dropdown-menu {
+  background-color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+  background-color: #333;
 }

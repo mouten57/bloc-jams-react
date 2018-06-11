@@ -2,7 +2,7 @@
     background: black;
     
 }
-.background {
+.background{
     margin-top: 10px;
 }
 
@@ -54,10 +54,7 @@
     font-weight: 900;
 }
 
-
-
 .selling-points {
-    border-top: 2px solid white;
     margin-top: 10px;
 }
 
@@ -68,12 +65,11 @@
     border: none;
 }
 
-.bottom-image {
-    margin-bottom: 10px;
-    width: 49%;
-}
-.bottom-image-left {
-    margin-top: 10px;
-    width: 51%
+.footer-collapse {
+    background: #4c4c4c;    
 }
 
+.bottom-image-l, .bottom-image-r{
+    margin: 0 auto;
+    padding: 5px;
+}

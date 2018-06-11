@@ -27,17 +27,17 @@ const Landing = () => (
                 <p className="point-description">No arbitrary limits. No distractions.</p>
             </Col>
             
-            <Col xs={12} md={6} mdPull={3} lg={6}  className="point">
+            <Col xs={12} md={6} mdPull={3} lg={6} className="point">
                 <h2 className="point-title">Mobile enabled.</h2>
                 <p className="point-description">Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
             </Col>  
         </Row>
         <Row id="bottom-images">
-            <Col xs={6}  className="bottom-image-left">
-            <Image fluid responsive src={BottomImage} alt="music background"/>
+            <Col xs={6}  className="bottom-image-l">
+            <Image responsive rounded src={BottomImage} alt="music background" />
             </Col>
-            <Col xs={6}  className="bottom-image">
-            <Image fluid responsive src={BottomImage2} alt="music background"/>
+            <Col xs={6}  className="bottom-image-r">
+            <Image responsive rounded src={BottomImage2} alt="music background" />
             </Col>
         </Row>
         <Navbar fluid staticBottom id="nav-bottom">
@@ -47,7 +47,7 @@ const Landing = () => (
     </Navbar.Brand>
     
   </Navbar.Header>
-  <Navbar.Collapse>
+  <Navbar.Collapse className="footer-collapse">
     <Navbar.Text pullRight>
       Turn the music up!
     </Navbar.Text>
