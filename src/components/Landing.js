@@ -40,19 +40,7 @@ const Landing = () => (
             <Image responsive rounded src={BottomImage2} alt="music background" />
             </Col>
         </Row>
-        <Navbar fluid staticBottom id="nav-bottom">
-  <Navbar.Header>
-    <Navbar.Brand>
-      BLOC JAMS
-    </Navbar.Brand>
-    
-  </Navbar.Header>
-  <Navbar.Collapse className="footer-collapse">
-    <Navbar.Text pullRight>
-      Turn the music up!
-    </Navbar.Text>
-  </Navbar.Collapse>
-</Navbar>;
+        
     </Grid>
 );
 
