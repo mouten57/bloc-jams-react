@@ -3,15 +3,46 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 15px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+#nav-link{
+  font-size: 15px;
+  margin: 2px;
   color: white;
+  font-family: "Montserrat";
+}
+
+
+
+
+#nav-pic, #nav-link {
+  display: inline-block;
+
+}
+
+#nav-pic {
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+}
+
+#logo-pic {
+  height: 30px;
+  display:inline-block;
+  margin-left: 15px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
 }
 
 .App-title {
@@ -22,25 +53,43 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+.navbar {
+  background-color: black;
+  height: 50px;
 }
 
-/* Added during the components: album assignment, not required */
-/* /////////////////////// */
-table {
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.App, .show-grid, .navbar, .row {
+  
+  padding: 0px;
+  background: black;
 }
 
-td {
-  text-align: left;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 20px;
+.navbar {
+  border-bottom: 2px solid white;
 }
-/* /////////////////////// */
 
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar-collapse {
+  position: relative;
+  z-index: 1000;
+  background: black;
+  float: right;
+}
+
+li.navbar-right {
+  color: black;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+  margin-right: 0px; 
+  margin-left: 0px; 
+}
+
+.navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 0;
+}

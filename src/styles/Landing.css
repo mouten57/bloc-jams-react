@@ -1,0 +1,79 @@
+.background, .title-block, .selling-points, .landing-container{
+    background: black;
+    
+}
+.background {
+    margin-top: 10px;
+}
+
+.hero-title, .point-title {
+    font-family: 'Jua', Helvetica, Arial, sans-serif;
+    color: white; 
+}
+
+.hero-sub-title, .point-description {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-brand {
+    font-family: 'Montserrat';
+}
+
+.navbar-brand:hover {
+    cursor: pointer;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-family: 'Indie Flower', cursive;
+}
+.hero-sub-title {
+    font-size: 1.5rem;
+    font-weight: lighter; 
+}
+
+
+.title-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.heading-block {
+    margin-top: 20px;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-title {
+    font-weight: 900;
+}
+
+
+
+.selling-points {
+    border-top: 2px solid white;
+    margin-top: 10px;
+}
+
+#nav-bottom {
+    height: 50px;
+    background: #4c4c4c;
+    margin-bottom: 0px;
+    border: none;
+}
+
+.bottom-image {
+    margin-bottom: 10px;
+    width: 49%;
+}
+.bottom-image-left {
+    margin-top: 10px;
+    width: 51%
+}
+

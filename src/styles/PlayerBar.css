@@ -1,0 +1,79 @@
+.navbar-default {
+  background: white;
+  border-top: 2px solid rgb(211, 184, 255);
+  height: 140px;
+
+}
+
+
+.seek-bar {
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #ffc0f7;
+  margin: 5px 0;
+}
+
+button {
+  color: white;
+  border: none;
+  font-size: 20px;
+  background: none;
+  background-color: none;
+}
+
+button:focus {
+  outline:0;
+}
+
+input:focus {
+  outline:0;
+}
+
+
+.artist-name, .song-name {
+  padding: 0px;
+  margin: 0px;
+  font-size: 10px;
+}
+
+.song-name {
+  font-size: 15px;
+}
+
+.current-time, .total-time {
+  font-size: 11px;
+}
+#volume-control {
+  padding-top: 5px;
+ 
+  margin: 0 auto;
+}
+#time-control {
+  margin: 0 auto;
+ 
+
+}
+
+.ion-ios-volume-low, .ion-ios-volume-high{
+  font-size: 1.8rem;
+  color: white;
+}
+
+.current-time, .total-time, .song-name, .artist-name {
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.show-grid {
+  border-bottom: 130px solid black;
+}
+.navbar-header {
+  margin: 0px;
+}
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+
+}

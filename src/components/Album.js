@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-// added during components:album lesson, not required
-import './../App.css';
-////// ^^^^^^ ///////
+import '../styles/Album.css';
 import PlayerBar from './PlayerBar';
+import { Grid, Row, Col, Image, Table } from 'react-bootstrap';
 
 class Album extends Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class Album extends Component {
         
         this.state = {
             album: album,
-            currentSong: "",
+            currentSong: album.songs[0],
             currentTime: 0,
             duration: album.songs[0].duration,
             currentVolume: 0.6,
@@ -118,51 +117,61 @@ class Album extends Component {
     render() {
         
         return (
-            <section className="album">
-                <section id="album-info">
-                    <img id="album-cover-art" src={ this.state.album.albumCover } alt={this.state.album.title}/>
-                    <div className="album-details">
-                        <h1 id="album-title">{this.state.album.title}</h1>
-                        <h2 className="artist">{this.state.album.artist}</h2>
-                        <div id="release-info">{this.state.album.releaseInfo}</div>
-                    </div>
-                </section>
-                <table id="song-list">
-                    <colgroup>
-                        <col id="song-number-column" />
-                        <col id="song-title-column" />
-                        <col id="song-duration-column" />
-                    </colgroup>
-                    <tbody>
-                        {
-                        this.state.album.songs.map( (song, index) =>
-                            <tr 
-                                className={"song"} 
-                                key={index} 
-                                onClick={()=> this.handleSongClick(song)} 
-                                onMouseEnter={() => this.setState({ isHovered: index + 1 })} 
-                                onMouseLeave={() => this.setState({ isHovered: false })}>
+            <Grid>
+            <Row className="show-grid">
+              <Row id="album-container">
+                <Col xsHidden sm={6} md={6} id="column-1">
+                    <Image id="album-image" circle responsive src={this.state.album.albumCover} alt={this.state.album.title} />
+                </Col>
 
-                                { (this.state.currentSong.title === song.title) ?
-                                this.state.isPlaying ? <td className="icon ion-ios-pause"></td> : <td className="icon ion-ios-play"></td>
-                                :
-                                (this.state.isHovered === index + 1) ?
-                                <td className="icon ion-ios-play"></td> 
-                                :
-                                <td className="song-number">{index+1})</td>
-                                }
-                                <td>{song.title}</td> 
-                                <td>{this.formatTime(song.duration)}</td> 
-                            </tr> 
+                <Col xs={12} sm={6} md={6} id="column-2">
+
+                    <Row id="album-info">
+                        <h1 id="album-title">{this.state.album.title}</h1>
+                        <h2 id="artist">{this.state.album.artist}</h2>
+                        <div id="release-info">{this.state.album.releaseInfo}</div>
+                    </Row>
+                    
+                    <Row id="song-list">
+                        <Table responsive>
+                            <colgroup>
+                                <col id="song-number-column" />
+                                <col id="song-title-column" />
+                                <col id="song-duration-column" />
+                            </colgroup>
+                            <tbody>
+                                {
+                                this.state.album.songs.map( (song, index) =>
+                                    <tr 
+                                        className={"song"} 
+                                        key={index} 
+                                        onClick={()=> this.handleSongClick(song)} 
+                                        onMouseEnter={() => this.setState({ isHovered: index + 1 })} 
+                                        onMouseLeave={() => this.setState({ isHovered: false })}>
+
+                                        { (this.state.currentSong.title === song.title) ?
+                                        this.state.isPlaying ? <td className="icon ion-ios-pause"></td> : <td className="icon ion-ios-play"></td>
+                                        :
+                                        (this.state.isHovered === index + 1) ?
+                                        <td className="icon ion-ios-play"></td> 
+                                        :
+                                        <td className="song-number">{index+1})</td>
+                                        }
+                                        <td>{song.title}</td> 
+                                        <td>{this.formatTime(song.duration)}</td> 
+                                    </tr> 
                         )
                         }
-
-                        
-                      </tbody>
-                </table>
-                <PlayerBar 
+                            </tbody>
+                        </Table>
+                    </Row>   
+                </Col>  
+                
+             </Row>
+             <PlayerBar 
                     isPlaying={this.state.isPlaying} 
                     currentSong={this.state.currentSong} 
+                    currentArtist={this.state.album.artist}
                     currentTime={this.audioElement.currentTime}
                     duration={this.audioElement.duration}
                     currentVolume={this.state.currentVolume}
@@ -173,8 +182,13 @@ class Album extends Component {
                     handleVolumeChange={(e) => this.handleVolumeChange(e)}
                     formatTime={(t) => this.formatTime(t)}
                     />
+            </Row>
+            
+            </Grid>
 
-            </section>
+            
+                
+
         );
     }
 }
