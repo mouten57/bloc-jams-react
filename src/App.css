@@ -41,6 +41,8 @@
 
 #logo-pic {
   height: 30px;
+  position: sticky;
+  z-index: 99999;
 }
 
 a:hover {
@@ -86,6 +88,7 @@ h1 {
   z-index: 1000;
   background: white;
   position: sticky;
+ 
 }
 
 .dropdown-toggle {
