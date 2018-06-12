@@ -16,21 +16,14 @@
   text-align: center;
 }
 
-
 #drop-link, #drop-pic {
   color: black;
   font-family: 'Montserrat';
   display: inline-block;
-  
   margin: 5px;
 }
-
-
-
-
 #nav-pic, #nav-link {
   display: inline-block;
-
 }
 
 #nav-pic {
@@ -63,21 +56,18 @@ h1 {
   font-size: large;
 }
 
-
 .navbar-header {
   background-color: white;
   height: 50px;
 }
 
-.App, .show-grid, .navbar, .row {
-  
+.App, .show-grid, .navbar, .row {  
   padding: 0px;
   background: black;
 }
 
 .navbar {
   border: none;
-
 }
 
 .navbar a:hover {
