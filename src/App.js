@@ -31,29 +31,30 @@ class App extends Component {
          <Navbar.Collapse>
         
          <Nav pullRight>
-          <NavItem eventKey={1} href="#"> 
+           {/*added componentClass={Link} to avoid a as child of a*/}
+          <NavItem componentClass={Link} eventKey={1} href="/" to="/" id="nav-link"> 
             <div className="icon ion-ios-home" id="nav-pic"></div> 
-            <Link to ='/' id="nav-link">Home</Link>
+           Home
           </NavItem>
 
           <NavDropdown eventKey={2} title="Library" id="nav-link" className="icon ion-ios-musical-note">
-            <MenuItem eventKey={2.1}>
+            <MenuItem eventKey={2.1} componentClass={Link} href="/libary" to="/library" id="drop-link">
               <div className="icon ion-ios-download" id="nav-pic"></div>
-              <Link to='/library' id="drop-link">Albums</Link></MenuItem>
+              Albums
+              </MenuItem>
             <MenuItem divider />
-            <MenuItem eventKey={2.2}>
+            <MenuItem eventKey={2.2} componentClass={Link} href="/album/the-colors"to="/album/the-colors" id="drop-link">
               
               <div className="icon ion-ios-arrow-round-forward" id="drop-pic"></div>
-              <Link to ='/album/the-colors' id="drop-link">The Colors</Link></MenuItem>
-              
-              
+              The Colors
+              </MenuItem>
+
             <MenuItem divider />
-            <MenuItem eventKey={2.3}>
+            <MenuItem eventKey={2.3} componentClass={Link} href="/album/the-telephone" to="/album/the-telephone" id="drop-link" >
               
               <div className="icon ion-ios-arrow-round-forward" id="drop-pic"></div>
-              <Link to ='/album/the-telephone' id="drop-link">The Telephone</Link></MenuItem>
-              
-              
+              The Telephone</MenuItem>
+
           </NavDropdown>
         </Nav>
         </Navbar.Collapse>

@@ -3,7 +3,7 @@ import './../styles/Landing.css';
 import LandingImage from './../images/music-background-3.jpg';
 import BottomImage from './../images/music-background.jpg';
 import BottomImage2 from './../images/music-background-2.jpg';
-import {Image, Grid, Row, Col, Navbar} from 'react-bootstrap';
+import {Image, Grid, Row, Col} from 'react-bootstrap';
 
 const Landing = () => (
     <Grid className="landing-container">
@@ -27,7 +27,7 @@ const Landing = () => (
                 <p className="point-description">No arbitrary limits. No distractions.</p>
             </Col>
             
-            <Col xs={12} md={6} mdPull={3} lg={6} className="point">
+            <Col xs={12} md={12} lg={12} className="point">
                 <h2 className="point-title">Mobile enabled.</h2>
                 <p className="point-description">Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
             </Col>  
